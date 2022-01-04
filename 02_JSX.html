@@ -10,11 +10,16 @@
     <script type="text/babel">
         const root = document.getElementById("root");
         
-        const title = (<h3 id="title" onMouseEnter={() => console.log('mouse entered')} >Hello Im a title</h3>);
-        const button = (<button>Click Me</button>);
+        const Title = () => (<h3 id="title" onMouseEnter={() => console.log('mouse entered')} >Hello Im a title</h3>);
+        const Button = () => (<button>Click Me</button>);
 
-        const container = React.createElement("div", null, [title, button]);
-        ReactDOM.render(container, root);
+        const Container = () => (
+            <div>
+                <Title />
+                <Button />    
+            </div>
+        )
+        ReactDOM.render(<Container />, root);
     </script>
 
 </html>
