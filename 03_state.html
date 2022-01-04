@@ -11,23 +11,18 @@
 
     <script type="text/babel">
         const root = document.getElementById("root");
-        let counter = 0;
-        const countUp = () => {
-            counter = counter + 1;
-            render();
-        }
 
-        const render = () => {
-            ReactDOM.render(<Container />, root);
+        function App(){ 
+            const [counter , modifier] = React.useState(10);
+            
+            return (
+                <div>
+                    <h3>Total Clicks : {counter}</h3>
+                    <button onClick={modifier}>Click Me</button>
+                </div>
+            );
         }
-
-        const Container = () => (
-            <div>
-                <h3>Total Clicks : {counter}</h3>
-                <button onClick={countUp}>Click Me</button>
-            </div>
-        );
-        render();
+        ReactDOM.render(<App />, root);
     </script>
 
 </html>
