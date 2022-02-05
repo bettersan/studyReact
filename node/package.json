@@ -1,7 +1,16 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "axios": "^0.25.0",
     "ejs": "~2.4.1",
     "express": "^4.17.2"
   }
+=======
+    "dependencies" : {
+        "axios" : "^0.25.0",
+	"ejs" : "~2.4.1",
+	"express" : "^4.17.2"
+    }
+
+>>>>>>> 8807e8dfb74778121f0709a893d0ccfd05d73e9d
 }
