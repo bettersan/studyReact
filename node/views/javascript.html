@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>javascript</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <button class="button">click me</button>
+    <div class="container">
+      <p class="hello">hello World!</p>
+    </div>
+
+    <script>
+      var button = document.querySelector('.button');
+      button.addEventListener('click', function(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/text')
+        xhr.send();
+        xhr.onreadystatechange = function(){
+          if(this.status === 200 && this.readyState === this.DONE){
+            var responseText = xhr.responseText;
+            var textNode = document.createTextNode(responseText);
+            var pNode = document.createElement('p');
+            pNode.appendChild(textNode);
+            pNode.classList.add('response');
+            var container = document.querySelector('.container');
+            helloNode = document.querySelector('.hello');
+            container.removeChild(helloNode);
+            container.appendChild(pNode);
+          }
+        }
+      })
+
+    </script>
+  </body>
+</html>
